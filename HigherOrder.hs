@@ -27,3 +27,13 @@ multByTenTwice' = doOperationTwice multByTen
 x' = addTenTwice' 3
 y' = multByTenTwice' 3
 
+main = do
+	let v1 = addTen 3
+	putStr "Addin 10 to 3 = "
+	print v1
+	
+	-- Pass addTenTwice to map, which will run the function passed
+	-- on an argment over each item in the list and return the resultant
+	-- list
+	let l1 = map addTenTwice' [1, 2, 3, 4, 5]
+	print l1

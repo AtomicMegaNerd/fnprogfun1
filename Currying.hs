@@ -14,3 +14,13 @@ addTwoNumbersTo3 x y = addThree x y 3
 addTwoNumbersTo3' :: (Num a) => a -> a -> a
 addTwoNumbersTo3' = addThree 3
 
+main = do
+	let v1 = addThree 2 3 4
+	putStr "v1 = "
+	print v1
+	
+	let v2 = addTwoNumbersTo3' 2 4
+	putStr "v2 = "
+	print v2
+	
+

@@ -16,4 +16,6 @@ adder x y = x + y
 -- are allowed
 main = do
   print z -- print the list
+  
+  print (adder 3 4)
 
