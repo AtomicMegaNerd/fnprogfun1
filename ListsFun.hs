@@ -24,9 +24,16 @@ isEven x = x `mod` 2 == 0
 
 main = do
 	let l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-	
 	putStr "Our list = "
 	print l1
+	
+	-- List concatenation, expensive, especially for large lists!
+	let l1cat = l1 ++ [10, 11, 12]
+	print l1cat
+	
+	-- Appending to the beginning of a list, cheap and fast!
+	let l1app = 0 : l1
+	print l1app
 	
 	let l2 = myMap doubleMe l1
 	putStr "Run map with doubleMe on our list -> "
