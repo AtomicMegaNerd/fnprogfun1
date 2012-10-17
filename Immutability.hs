@@ -12,7 +12,7 @@ z = x ++ y -- This makes a new list that contains all the elements from x and y
 -- ALWAYS return the same value!
 adder x y = x + y
 
-adder x y = x + y
+adder' x y = x + y
 --	where x = 3 -- this will not compile
 
 -- This is the special part of the program where IO and side effects
