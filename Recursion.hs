@@ -1,6 +1,7 @@
 -- Recursion is very popular in Functional Programming
 -- because you can solve many problems without using
--- mutable state
+-- mutable state.  In fact, as far as I can tell, there
+-- are no for or while loops in Haskell!
 
 -- Factorial
 factorial :: (Eq a, Num a) => a -> a

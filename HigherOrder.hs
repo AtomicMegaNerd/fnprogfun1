@@ -13,24 +13,29 @@ doOperationTwice f x = f (f x)
 addTenTwice x = doOperationTwice addTen x
 multByTenTwice x = doOperationTwice multByTen x 
 
--- Calling our higher order functions that were returned to us
-x = addTenTwice 3
-y = multByTenTwice 3
-
 -- Notice the x on both sides above?  We can use algebraic
 -- simplification here... remove it
 addTenTwice' = doOperationTwice addTen
 multByTenTwice' = doOperationTwice multByTen 
 
--- Haskell still creates the right function that takes the 
--- argument for us!
-x' = addTenTwice' 3
-y' = multByTenTwice' 3
 
 main = do
 	let v1 = addTen 3
 	putStr "Addin 10 to 3 = "
 	print v1
+	
+	-- Calling our higher order functions that were returned to us
+	let x = addTenTwice 3
+	let y = multByTenTwice 3
+	print x
+	print y
+	
+	-- Haskell still creates the right function that takes the 
+	-- argument for us!
+	let x' = addTenTwice' 3
+	let y' = multByTenTwice' 3
+	print x'
+	print y'
 	
 	-- Pass addTenTwice to map, which will run the function passed
 	-- on an argment over each item in the list and return the resultant
