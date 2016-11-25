@@ -7,38 +7,37 @@ multByTen x = x * 10
 -- twice on the 2nd argument.
 doOperationTwice f x = f (f x)
 
--- We can pass addTen and multByTen to doOperationTwice as an 
--- argument to create new functions!  
+-- We can pass addTen and multByTen to doOperationTwice as an
+-- argument to create new functions!
 -- These expressions also return a function that we can call!
 addTenTwice x = doOperationTwice addTen x
-multByTenTwice x = doOperationTwice multByTen x 
+multByTenTwice x = doOperationTwice multByTen x
 
 -- Notice the x on both sides above?  We can use algebraic
 -- simplification here... remove it
 addTenTwice' = doOperationTwice addTen
-multByTenTwice' = doOperationTwice multByTen 
-
+multByTenTwice' = doOperationTwice multByTen
 
 main = do
-	let v1 = addTen 3
-	putStr "Addin 10 to 3 = "
-	print v1
-	
-	-- Calling our higher order functions that were returned to us
-	let x = addTenTwice 3
-	let y = multByTenTwice 3
-	print x
-	print y
-	
-	-- Haskell still creates the right function that takes the 
-	-- argument for us!
-	let x' = addTenTwice' 3
-	let y' = multByTenTwice' 3
-	print x'
-	print y'
-	
-	-- Pass addTenTwice to map, which will run the function passed
-	-- on an argment over each item in the list and return the resultant
-	-- list
-	let l1 = map addTenTwice' [1, 2, 3, 4, 5]
-	print l1
+    let v1 = addTen 3
+    putStr "Addin 10 to 3 = "
+    print v1
+
+    -- Calling our higher order functions that were returned to us
+    let x = addTenTwice 3
+    let y = multByTenTwice 3
+    print x
+    print y
+
+    -- Haskell still creates the right function that takes the
+    -- argument for us!
+    let x' = addTenTwice' 3
+    let y' = multByTenTwice' 3
+    print x'
+    print y'
+
+    -- Pass addTenTwice to map, which will run the function passed
+    -- on an argment over each item in the list and return the resultant
+    -- list
+    let l1 = map addTenTwice' [1, 2, 3, 4, 5]
+    print l1

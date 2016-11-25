@@ -65,16 +65,16 @@ crazy' :: (Num a) => a -> a
 crazy' = doubleMe . addOne . times3
 
 main = do
-	let v1 = addThree 2 3 4
-	putStr "v1 = "
-	print v1
-	
-	let v2 = addTwoNumbersTo3' 2 4
-	putStr "v2 = "
-	print v2
-	
-	let cr1 = crazy' 5
-	putStr "crazy 5 = "
-	print cr1
-	
+    let v1 = addThree 2 3 4
+    putStr "v1 = "
+    print v1
+
+    let v2 = addTwoNumbersTo3' 2 4
+    putStr "v2 = "
+    print v2
+
+    let cr1 = crazy' 5
+    putStr "crazy 5 = "
+    print cr1
+
 
